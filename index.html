@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Happy Little Doers — Marketing Cheat Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FBF7EE;
+    --paper-edge: #F3ECDB;
+    --ink: #1E1A14;
+    --ink-soft: #4A4338;
+    --ink-faded: #8A7F6E;
+    --rule: #E4D9BD;
+    --highlight: #FFE873;
+    --highlight-soft: #FFF4B3;
+    --speech: #9B82B8;
+    --numeracy: #7B9BC1;
+    --problem: #D4A84B;
+    --literacy: #5B8A8E;
+    --good: #4E8C5A;
+    --warn: #B85A3C;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hand { font-family: 'Caveat', cursive; font-weight: 700; letter-spacing: 0.5px; }
+
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+
+  /* ---------- Header ---------- */
+  header.top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed var(--rule);
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+  header.top h1 {
+    margin: 0;
+    font-family: 'Caveat', cursive;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  header.top h1 span.dot { color: var(--problem); }
+  header.top .meta {
+    font-size: 13px;
+    color: var(--ink-faded);
+    text-align: right;
+  }
+  header.top .meta strong { color: var(--ink-soft); display: block; font-size: 14px; }
+
+  /* ---------- Mumsnet Test sticky-note ---------- */
+  .mumsnet {
+    background: var(--highlight-soft);
+    border: 1.5px solid #E8C84A;
+    border-radius: 16px;
+    padding: 22px 28px;
+    margin-bottom: 40px;
+    box-shadow: 4px 4px 0 rgba(232, 200, 74, 0.25);
+    position: relative;
+  }
+  .mumsnet h2 {
+    margin: 0 0 8px;
+    font-family: 'Caveat', cursive;
+    font-size: 34px;
+    line-height: 1;
+  }
+  .mumsnet p {
+    margin: 0;
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ink-soft);
+  }
+  .mumsnet .tag {
+    position: absolute;
+    top: -10px;
+    right: 24px;
+    background: var(--ink);
+    color: var(--highlight);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  /* ---------- Section primitives ---------- */
+  section { margin-bottom: 48px; }
+  .section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    line-height: 1;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .section-title .num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--ink-faded);
+    transform: translateY(-6px);
+  }
+  .section-sub {
+    margin: 0 0 18px;
+    color: var(--ink-faded);
+    font-size: 14px;
+  }
+
+  /* ---------- Mission + Headlines ---------- */
+  .mission {
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    max-width: 780px;
+    border-left: 4px solid var(--problem);
+    padding-left: 18px;
+  }
+
+  .headlines {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .headline-card {
+    background: white;
+    border: 1.5px solid var(--rule);
+    border-radius: 14px;
+    padding: 22px 24px;
+    position: relative;
+  }
+  .headline-card .label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+  }
+  .headline-card .text {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-top: 4px;
+    color: var(--ink);
+  }
+
+  /* ---------- VP / Benefits / Features grid ---------- */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 28px;
+  }
+  .card {
+    background: white;
+    border: 1.5px solid var(--rule);
+    border-radius: 14px;
+    padding: 22px 24px 24px;
+  }
+  .card h3 {
+    margin: 0 0 14px;
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    line-height: 1;
+  }
+  .card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .card li {
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 14px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .card li:last-child { border-bottom: 0; }
+  .card li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--problem);
+    margin-top: 8px;
+    flex: 0 0 6px;
+  }
+  .card.benefits li::before { background: var(--good); }
+  .card.features li::before { background: var(--literacy); }
+  .card .group-label {
+    margin: 14px 0 6px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+  }
+
+  /* ---------- Eco + Trust ---------- */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .trust-list li::before { background: var(--problem); }
+  .eco-list li::before { background: var(--good); }
+  .award-row {
+    background: var(--highlight-soft);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .award-row strong { color: var(--ink); }
+  .stat-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    background: var(--paper-edge);
+    border-radius: 10px;
+    padding: 10px 14px;
+    flex: 1 1 120px;
+    text-align: center;
+  }
+  .stat .n { font-family: 'Caveat', cursive; font-size: 32px; line-height: 1; color: var(--ink); }
+  .stat .l { font-size: 11px; letter-spacing: 1.5px; color: var(--ink-faded); text-transform: uppercase; margin-top: 4px; }
+
+  /* ---------- Skill pillars ---------- */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .pillar {
+    background: white;
+    border: 1.5px solid var(--rule);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .pillar .icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+  }
+  .pillar.speech .icon { background: var(--speech); }
+  .pillar.numeracy .icon { background: var(--numeracy); }
+  .pillar.problem .icon { background: var(--problem); }
+  .pillar.literacy .icon { background: var(--literacy); }
+  .pillar h4 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .pillar p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* ---------- Objections ---------- */
+  .objections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .objection {
+    background: white;
+    border: 1.5px solid var(--rule);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+  }
+  .objection .says {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--warn);
+    margin: 0 0 8px;
+  }
+  .objection .means {
+    font-size: 13px;
+    color: var(--ink-faded);
+    margin: 0 0 10px;
+    font-style: italic;
+  }
+  .objection .reframe {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0;
+    padding-top: 10px;
+    border-top: 1px dotted var(--rule);
+  }
+  .objection .reframe strong { color: var(--good); }
+
+  /* ---------- Voice cheats ---------- */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .voice-do, .voice-dont {
+    border-radius: 12px;
+    padding: 18px 22px;
+  }
+  .voice-do {
+    background: rgba(78, 140, 90, 0.08);
+    border: 1.5px solid rgba(78, 140, 90, 0.3);
+  }
+  .voice-dont {
+    background: rgba(184, 90, 60, 0.06);
+    border: 1.5px solid rgba(184, 90, 60, 0.25);
+  }
+  .voice-do h3, .voice-dont h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    margin: 0 0 8px;
+  }
+  .voice-do h3 { color: var(--good); }
+  .voice-dont h3 { color: var(--warn); }
+  .voice-do ul, .voice-dont ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--ink-soft); }
+  .voice-do li, .voice-dont li { padding: 3px 0; }
+
+  /* ---------- Quotes strip ---------- */
+  .quotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .quote {
+    background: white;
+    border: 1.5px solid var(--rule);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+  }
+  .quote::before {
+    content: '"';
+    font-family: 'Caveat', cursive;
+    font-size: 80px;
+    line-height: 0.6;
+    color: var(--highlight);
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 0;
+  }
+  .quote p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+    position: relative;
+    z-index: 1;
+  }
+  .quote .attr {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--ink-faded);
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 2px dashed var(--rule);
+    font-size: 12px;
+    color: var(--ink-faded);
+    text-align: center;
+  }
+
+  @media (max-width: 920px) {
+    .grid-3, .grid-2, .pillars, .objections, .voice-grid, .quotes, .headlines {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 16px; max-width: 100%; }
+    .card, .pillar, .objection, .quote, .headline-card { break-inside: avoid; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="top">
+    <h1>Happy Little Doers <span class="dot">.</span></h1>
+    <div class="meta">
+      <strong>Marketing cheat sheet</strong>
+      Brand foundation · single-page reference
+    </div>
+  </header>
+
+  <!-- ============ MUMSNET TEST ============ -->
+  <div class="mumsnet">
+    <span class="tag">THE LITMUS TEST</span>
+    <h2>The Mumsnet Test</h2>
+    <p>"Would this sound natural if I posted it in a Mumsnet thread? Or does it sound like a brand trying to sell me something?"</p>
+  </div>
+
+  <!-- ============ MISSION + HEADLINES ============ -->
+  <section>
+    <h2 class="section-title"><span class="num">01</span> Mission</h2>
+    <p class="mission">Our aim is to inspire kids to reach their full potential by helping them discover their favourite way of learning through <strong>PLAY</strong>.</p>
+
+    <div class="headlines">
+      <div class="headline-card">
+        <div class="label">Headline</div>
+        <div class="text">'Doing' trumps 'telling'</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VP / BENEFITS / FEATURES ============ -->
+  <section>
+    <h2 class="section-title"><span class="num">02</span> The Offer</h2>
+    <p class="section-sub">What we sell, what they get, what's in the box.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Value Proposition</h3>
+        <ul>
+          <li>Learn through play with sensory activity cards</li>
+          <li>50+ decks across ages 0–8</li>
+        </ul>
+      </div>
+
+      <div class="card benefits">
+        <h3>Benefits</h3>
+        <div class="group-label">Outcomes</div>
+        <ul>
+          <li>Help them reach their full potential</li>
+          <li>Fast-track their learning</li>
+          <li>Find their spark for learning</li>
+          <li>Inspire the joy of learning</li>
+          <li>Form good habits</li>
+          <li>Build skills for life (reading, maths)</li>
+        </ul>
+        <div class="group-label">Parent wins</div>
+        <ul>
+          <li>No screen-time guilt</li>
+          <li>Connect with your kids</li>
+          <li>Only 5 minutes / day</li>
+        </ul>
+        <div class="group-label">School-ready</div>
+        <ul>
+          <li>Reception-ready (National Curriculum aligned)</li>
+          <li>More confident in speech, language &amp; reading</li>
+          <li>Become fluent readers</li>
+          <li>Improve numeracy</li>
+          <li>Improve memory recall</li>
+        </ul>
+      </div>
+
+      <div class="card features">
+        <h3>Features</h3>
+        <ul>
+          <li>Built for little hands</li>
+          <li>Child-friendly font</li>
+          <li>Trace-and-wipe, high-contrast, textured, thick card, rounded corners</li>
+          <li>Designed by a mum</li>
+          <li>Printed in the UK</li>
+          <li>UK-designed, UK-manufactured</li>
+          <li>FSC-certified, plant-based inks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ECO + TRUST ============ -->
+  <section>
+    <h2 class="section-title"><span class="num">03</span> Eco &amp; Trust</h2>
+    <p class="section-sub">The credibility stack — what we say when scepticism hits.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Eco credentials</h3>
+        <ul class="eco-list">
+          <li>Reduced plastic production</li>
+          <li>Vegan-friendly glue (free from animal cruelty &amp; synthetic materials)</li>
+          <li>Local suppliers, accredited in sustainable sourcing</li>
+          <li>Deinkable — inks safely removed in recycling so paper can be reused</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Trust indicators</h3>
+        <ul class="trust-list">
+          <li>Teacher-tested — survives a Year 1 classroom, 90 kids a day</li>
+          <li>Used in 25+ classrooms daily</li>
+          <li>STEM accredited</li>
+          <li>Age-banded so you can't pick wrong</li>
+        </ul>
+
+        <div class="award-row"><strong>Junior Design Awards</strong> — Silver 2021</div>
+        <div class="award-row"><strong>Made for Mums</strong> — Bronze 2022</div>
+        <div class="award-row"><strong>ToyMark</strong> — 2023</div>
+
+        <div class="stat-row">
+          <div class="stat"><div class="n">4.7</div><div class="l">Trustpilot ★</div></div>
+          <div class="stat"><div class="n">110+</div><div class="l">Reviews</div></div>
+          <div class="stat"><div class="n">97.3%</div><div class="l">Positive</div></div>
+          <div class="stat"><div class="n">5</div><div class="l">Industry awards</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILL PILLARS ============ -->
+  <section>
+    <h2 class="section-title"><span class="num">04</span> The Four Skill Pillars</h2>
+    <p class="section-sub">What HLD develops — the on-pack and on-page framework.</p>
+
+    <div class="pillars">
+      <div class="pillar speech">
+        <div class="icon">💬</div>
+        <h4>Speech &amp; Language</h4>
+        <p>Helps build new vocabulary and confidence in speech &amp; language.</p>
+      </div>
+      <div class="pillar numeracy">
+        <div class="icon">＋</div>
+        <h4>Numeracy Skills</h4>
+        <p>Helps build an understanding of essential numeracy and maths.</p>
+      </div>
+      <div class="pillar problem">
+        <div class="icon">🧩</div>
+        <h4>Problem Solving</h4>
+        <p>Encourages understanding and trains the brain on logical thinking.</p>
+      </div>
+      <div class="pillar literacy">
+        <div class="icon">📖</div>
+        <h4>Literacy Skills</h4>
+        <p>Develops an understanding of letter, sound and reading skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VOICE ============ -->
+  <section>
+    <h2 class="section-title"><span class="num">05</span> Voice — quick rules</h2>
+    <p class="section-sub">Pass the Mumsnet Test by default.</p>
+
+    <div class="voice-grid">
+      <div class="voice-do">
+        <h3>Do</h3>
+        <ul>
+          <li>Acknowledge the real feeling, then normalise it, then offer the small swap</li>
+          <li>"Doing" verbs over "telling" claims — show the kitchen-table moment</li>
+          <li>Specific, mundane detail (5 minutes, breakfast, kitchen table)</li>
+          <li>Let real reviews carry the proof</li>
+          <li>Plain, parent-to-parent phrasing</li>
+        </ul>
+      </div>
+      <div class="voice-dont">
+        <h3>Don't</h3>
+        <ul>
+          <li>Marketing speak ("revolutionary", "transform", "unlock")</li>
+          <li>Promise outcomes the cards can't deliver alone</li>
+          <li>Claim to "treat" or "fix" SEN / screen addiction</li>
+          <li>Lean on Instagram polish over real-parent texture</li>
+          <li>Use urgency tricks (fake countdowns, scarcity timers)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OBJECTIONS ============ -->
+  <section>
+    <h2 class="section-title"><span class="num">06</span> Objections &amp; Reframes</h2>
+    <p class="section-sub">Every campaign must handle these. The reframe is what we say, not just what they hear.</p>
+
+    <div class="objections">
+      <div class="objection">
+        <p class="says">"They're just flashcards."</p>
+        <p class="means">Real fear: I don't see what makes these different from the £3 pack in WHSmith.</p>
+        <p class="reframe"><strong>Reframe:</strong> Pedagogy made visible — active, multi-sensory, designed by a mum. 5 awards, STEM-certified, FSC paper, UK-made. Not a commodity.</p>
+      </div>
+
+      <div class="objection">
+        <p class="says">"Will my child actually use these?"</p>
+        <p class="means">Real fear: I've wasted money on "educational" stuff that ended up in a drawer.</p>
+        <p class="reframe"><strong>Reframe:</strong> "Screen-free play they actually ask for." Lead with reluctant-learner reviews — Bella, Sarah Shipman, MRSSAMANTHAFROST.</p>
+      </div>
+
+      <div class="objection">
+        <p class="says">"Is this right for my child's age?"</p>
+        <p class="means">Real fear: I'll waste money on something too advanced — or already outgrown.</p>
+        <p class="reframe"><strong>Reframe:</strong> Clear age/stage badges. Variants named by intent ("Starter Set" / "Full Collection"). Suzy Aspin: "within a week I could see her making huge progress."</p>
+      </div>
+
+      <div class="objection">
+        <p class="says">"Is this just another fad?"</p>
+        <p class="means">Real fear: Looks polished on Insta — is this substance or marketing?</p>
+        <p class="reframe"><strong>Reframe:</strong> Verified reviews, not curated testimonials. Specific skills mapped ("Builds number recognition to 20"). Industry awards, not influencer hype.</p>
+      </div>
+
+      <div class="objection">
+        <p class="says">"I don't have time."</p>
+        <p class="means">Real fear: I'm exhausted. One more "should" is impossible.</p>
+        <p class="reframe"><strong>Reframe:</strong> Not adding to the mental load — <em>replacing</em> 5 minutes of iPad with 5 minutes of cards. "5 minutes. A kitchen table. That's it."</p>
+      </div>
+
+      <div class="objection">
+        <p class="says">"My child has SEN."</p>
+        <p class="means">Real fear: I've tried everything. I've stopped believing.</p>
+        <p class="reframe"><strong>Reframe:</strong> Tactile, multi-sensory design is inherently ADHD-friendly. Aga Kata's review carries it: "My son has never spent so much time writing a letter." Never claim to "treat" — let reviews lift.</p>
+      </div>
+
+      <div class="objection">
+        <p class="says">"The damage is already done."</p>
+        <p class="means">Real fear: I failed during lockdown. Now we're stuck.</p>
+        <p class="reframe"><strong>Reframe:</strong> Gradual swap, never cold turkey. "Lockdown taught them to reach for the iPad. These teach them to reach for something else." No blame, no preach.</p>
+      </div>
+
+      <div class="objection">
+        <p class="says">"Shipping seems expensive."</p>
+        <p class="means">Real fear: Total cost doesn't feel worth it vs Amazon Prime.</p>
+        <p class="reframe"><strong>Reframe:</strong> Value, not cost. Free shipping over £50 + bundles that clear the bar. Show the quality gap vs £8 electronic Amazon cards.</p>
+      </div>
+
+      <div class="objection">
+        <p class="says">"I'll wait for a sale."</p>
+        <p class="means">Real fear: I'm not confident enough to commit right now.</p>
+        <p class="reframe"><strong>Reframe:</strong> Confidence gap, not price gap. Review volume + founder story + sticky CTA. No fake countdowns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HERO QUOTES ============ -->
+  <section>
+    <h2 class="section-title"><span class="num">07</span> Hero proof — quotes to deploy</h2>
+    <p class="section-sub">The three lines that carry the most weight across ads, page and email.</p>
+
+    <div class="quotes">
+      <div class="quote">
+        <p>Within a week I could see her making huge progress — she now recognises most of the words, is able to make links between similar sounding words and is seeing patterns.</p>
+        <div class="attr">— Suzy Aspin · ★★★★★ Verified</div>
+      </div>
+      <div class="quote">
+        <p>Got my otherwise non-interested kid onto maths and time tables without even realising he's learning.</p>
+        <div class="attr">— Bella · ★★★★★ Verified</div>
+      </div>
+      <div class="quote">
+        <p>My reluctant reader absolutely loves them and hasn't stopped playing with them.</p>
+        <div class="attr">— Sarah Shipman · ★★★★★ Verified</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Happy Little Doers · brand foundation · pairs with <code>voice-profile.md</code>, <code>persona/objections.md</code>
+  </footer>
+
+</div>
+</body>
+</html>
